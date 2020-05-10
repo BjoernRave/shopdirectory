@@ -1,0 +1,47 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Website {
+  id       String    @default(cuid()) @id
+  baseUrl  String
+  name     String
+  products Product[]
+  logo     String?
+}
+
+model Product {
+  id            String        @default(cuid()) @id
+  url           String
+  images        String[]
+  name          String
+  price         Float
+  currency      String
+  description   String?
+  probabilities Probability[]
+  websiteId     String?
+  website       Website?      @relation(fields: [websiteId], references: [id])
+  style         Style?        @relation(fields: [styleId], references: [id])
+  styleId       String?
+}
+
+model Probability {
+  id        String  @default(cuid()) @id
+  className String
+  value     Float
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+}
+
+model Style {
+  id          String    @default(cuid()) @id
+  name        String
+  images      String[]
+  description String?
+  products    Product[]
+}

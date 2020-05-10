@@ -1,0 +1,36 @@
+datasource db {
+  provider = "sqlite"
+  url = "***"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Website {
+  id      Int     @default(autoincrement()) @id
+  url     String
+  pages   Page[]
+  scraped Boolean @default(false)
+}
+
+model Page {
+  id        Int       @default(autoincrement()) @id
+  url       String
+  scraped   Boolean
+  products  Product[]
+  website   Website?  @relation(fields: [websiteId], references: [id])
+  websiteId Int?
+  error     String?
+}
+
+model Product {
+  id       Int    @default(autoincrement()) @id
+  title    String
+  price    Float
+  currency String
+  url      String
+  imageUrl String
+  page     Page?  @relation(fields: [pageId], references: [id])
+  pageId   Int?
+}

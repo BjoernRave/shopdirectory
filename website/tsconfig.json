@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": "./",
+    "sourceMap": true,
+    "downlevelIteration": true,
+    "paths": {
+      "lib/*": ["./lib/*"],
+      "scraper/*": ["./scraper/*"]
+    }
+  },
+  "exclude": ["node_modules", ".next", "cypress"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/test.ks"]
+}

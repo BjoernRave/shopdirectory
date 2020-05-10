@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "public",
+    "rootDir": "./",
+    "lib": ["esnext", "ES2019", "DOM"],
+    "target": "ES2019",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "downlevelIteration": true,
+    "baseUrl": "./",
+    "paths": {
+      "lib/*": ["./lib/*"],
+      "scraper/*": ["./scraper/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["**/*"]
+}
