@@ -2,8 +2,8 @@
 
 # dependencies
 node_modules
-/.pnp
 .pnp.js
+.vscode
 
 # testing
 /coverage
@@ -29,3 +29,4 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 .env
+apify_storage

@@ -1,6 +1,5 @@
 import moment from 'moment'
 import puppeteer, { Browser, ElementHandle, Page, SetCookie } from 'puppeteer'
-import regexgen from 'regexgen'
 import { logger } from './logger'
 
 export const noNumberRegex = /\D/
@@ -8,8 +7,6 @@ export const numberRegex = /[0-9]/
 export const currenyRegex = /[\$\xA2-\xA5\u058F\u060B\u09F2\u09F3\u09FB\u0AF1\u0BF9\u0E3F\u17DB\u20A0-\u20BD\uA838\uFDFC\uFE69\uFF04\uFFE0\uFFE1\uFFE5\uFFE6]/
 export const priceExtractionRegex = /[+-]?\d+(\.\d+)?/g
 export const isImageRegex = /\.(jpg|gif|png)$/
-
-export const priceRegex = regexgen(['£15.40', '£25.00', '€10,00'])
 
 export const formatDate = (date: string) => {
   let formattedDate
